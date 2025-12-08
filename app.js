@@ -30,7 +30,7 @@ document.addEventListener("click", (e) => {
 const heroImages = [
   "images/closeupvarmlp2.png",
   "images/blaastol.png",
-  "images/pinkspeakermarshall.png"
+  "images/pinkspeakermarshall.png",
 ];
 
 let currentImageIndex = 0;
