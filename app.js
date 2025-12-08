@@ -1,5 +1,3 @@
-
-
 // Toggle menu =============================================================
 // Denne kode håndterer visningen af mobilmenuen, når brugeren klikker på menuikonet.
 
@@ -27,9 +25,34 @@ document.addEventListener("click", (e) => {
   }
 });
 
+// Hero billede carousel ========================================================
+// Skifter billede hver 5 sekund med fade effect
+const heroImages = [
+  "images/closeupvarmlp2.png",
+  "images/blaastol.png",
+  "images/pinkspeakermarshall.png"
+];
 
+let currentImageIndex = 0;
 
+function rotateHeroImage() {
+  const heroImage = document.getElementById("heroImage");
+  if (heroImage) {
+    // Fade out
+    heroImage.style.opacity = "0";
 
+    // Skift billede efter fade out
+    setTimeout(() => {
+      currentImageIndex = (currentImageIndex + 1) % heroImages.length;
+      heroImage.src = heroImages[currentImageIndex];
+      // Fade in
+      heroImage.style.opacity = "1";
+    }, 300);
+  }
+}
+
+// Skift billede hver 5 sekund (5000 ms)
+setInterval(rotateHeroImage, 5000);
 
 // Farveudvalg på produktside =================================================
 // Denne kode håndterer skiftet af produktbillede baseret på den valgte farve.
@@ -58,12 +81,6 @@ colorButtons.forEach((button) => {
   });
 });
 
-
-
-
-
-
-
 // Kurv funktionalitet =============================================================
 // Denne kode håndterer tilføjelse af produkter til kurven og gemmer dem lokalt
 
@@ -85,10 +102,6 @@ function initCart() {
     return;
   }
 
-
-
-
-
   // Tilføj klik-event til "Tilføj til kurv" knappen ==================================
   // Når der klikkes, hentes produktinfo og gemmes i localStorage
   addToCartBtn.addEventListener("click", () => {
@@ -108,13 +121,6 @@ function initCart() {
       color: selectedColor,
       quantity: 1,
     };
-
-
-
-
-
-
-
 
     // Hent eksisterende kurv fra localStorage ===================================
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -141,7 +147,7 @@ function initCart() {
     const originalText = addToCartBtn.textContent;
     addToCartBtn.textContent = "✓ Tilføjet til kurv";
     addToCartBtn.style.backgroundColor = "#ffffff";
-    
+
     // Gendan original tekst efter 2 sekunder
     setTimeout(() => {
       addToCartBtn.textContent = originalText;
@@ -149,10 +155,6 @@ function initCart() {
     }, 2000);
   });
 }
-
-
-
-
 
 // Funktion til at vise modal popup når et produkt tilføjes til kurven =============
 // og automatisk lukke den efter 5 sekunder
@@ -172,21 +174,12 @@ function showCartModal(product) {
   }, 5000);
 }
 
-// Funktion til at lukke modal popup 
+// Funktion til at lukke modal popup
 // når brugeren klikker på luk-knappen
 function closeCartModal() {
   const modal = document.getElementById("cartModal");
   modal.classList.remove("active");
 }
-
-
-
-
-
-
-
-
-
 
 // Vis kurv på kurv.html siden =================================================
 // Denne kode henter kurvindholdet fra localStorage
@@ -196,32 +189,21 @@ function displayCart() {
   const cartItemsDiv = document.getElementById("cartItems");
   const cartTotalDiv = document.getElementById("cartTotal");
 
-// Hvis kurven er tom, vis besked
+  // Hvis kurven er tom, vis besked
   if (cart.length === 0) {
     cartItemsDiv.innerHTML = "<p>Din kurv er tom</p>";
     return;
   }
 
-// Byg HTML til kurvindholdet 
+  // Byg HTML til kurvindholdet
   let html = '<h2>Din kurv</h2><table border="1" style="width:100%">';
   html +=
     "<tr><th>Produkt</th><th>titel</th><th>Farve</th><th>Pris</th><th>Antal</th><th>Slet</th></tr>";
 
   let total = 0;
 
-
-
-
-
-
-
-
-
-
-
-
-// Gennemgå hvert produkt i kurven ==============================================
-// og tilføj en række i tabellen
+  // Gennemgå hvert produkt i kurven ==============================================
+  // og tilføj en række i tabellen
   cart.forEach((item) => {
     const price = parseInt(item.price);
     const itemTotal = price * item.quantity;
@@ -237,13 +219,13 @@ function displayCart() {
     </tr>`;
   });
 
-// Afslut tabellen og vis totalen
+  // Afslut tabellen og vis totalen
   html += "</table>";
   cartItemsDiv.innerHTML = html;
   cartTotalDiv.innerHTML = `<h3>I alt: ${total} DKK</h3>`;
 }
 
-// Funktion til at fjerne et produkt fra kurven 
+// Funktion til at fjerne et produkt fra kurven
 // når brugeren klikker på slet-knappen
 function removeFromCart(id) {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -251,15 +233,6 @@ function removeFromCart(id) {
   localStorage.setItem("cart", JSON.stringify(cart));
   displayCart();
 }
-
-
-
-
-
-
-
-
-
 
 // Kald funktionen når siden indlæses ==================================
 displayCart();
