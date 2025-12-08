@@ -925,10 +925,72 @@ header {
   padding: 20px;
 }
 
-/* Mobile først - 1 kolonne */
-#movie-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  padding: 1rem;
+/*================================================================================*/
+/* RESPONSIVE DESIGN - MOBILE ENHEDER */
+/*================================================================================*/
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .herotekst h1 {
+    font-size: 1.8rem;
+  }
+
+  .vibes-images,
+  .vibes-contents {
+    grid-template-columns: 1fr;
+  }
+
+  .product-container,
+  .hylde {
+    flex-direction: column;
+  }
+
+  .hylde-tekst,
+  .hylde-billede {
+    max-width: 100%;
+  }
+
+  .gallery-main {
+    height: 300px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
 }
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+
+  .herotekst h1 {
+    font-size: 1.5rem;
+  }
+
+  .herotekst h2 {
+    font-size: 0.9rem;
+  }
+
+  .logo img {
+    height: 60px;
+  }
+
+  .gallery-main {
+    height: 250px;
+  }
+
+  .modal-content {
+    max-width: 90vw;
+  }
+}
+
+
+
