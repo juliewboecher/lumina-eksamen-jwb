@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Lumina - Skab stemningen. Del øjeblikket.</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- CART CONFIRMATION MODAL -->
+    <div id="cartModal" class="cart-modal">
+      <div class="modal-content">
+        <button class="modal-close" onclick="closeCartModal()">×</button>
+
+        <div class="modal-product">
+          <img id="modalImage" src="" alt="Produkt" />
+
+          <div class="modal-info">
+            <p class="modal-quantity" id="modalQuantity">1 stk.</p>
+            <p class="modal-color" id="modalColor">Farve</p>
+            <p class="modal-price" id="modalPrice">Pris</p>
+          </div>
+        </div>
+
+        <a href="kurv.html" class="modal-btn">Se kurv</a>
+      </div>
+    </div>
+
+    <!-- ANNOUNCEMENT BAR -->
+    <section class="announcement-bar">
+      <p>
+        Gå på opdagelse i vores nye kollektion LUMINA ONE
+        <a href="farveudvalg.html"></a>
+      </p>
+    </section>
+
+    <!-- NAVIGATION -->
+
+    <!-- Toggle dropdown Menu -->
+    <nav class="topNav">
+      <div class="nav-venstre">
+        <button class="menu-toggle" id="menuToggle">
+          <img class="menu-ikon" src="images/burgermenu.svg" alt="menu ikon" />
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="seprodukt.html">Se produkt</a>
+        <a href="farveudvalg.html">Farveudvalg</a>
+        <a href="features.html">Funktioner</a>
+        <a href="omlumina.html">Om LUMINA ONE</a>
+        <a href="trustpilot.html">Hvad synes andre?</a>
+      </div>
+
+      <div class="nav-midten">
+        <a href="index.html" class="logo">
+          <img src="images/nytlogosort.svg" alt="Lumina Logo" />
+        </a>
+      </div>
+
+      <div class="nav-højre">
+        <a href="kurv.html" class="cart">
+          <img src="images/kurv.svg" alt="kurv ikon" />
+        </a>
+      </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header>
+      <section class="hero">
+        <img src="images/closeupvarmlp2.png" alt="Lumina højtaler" />
+
+        <div class="herotekst">
+          <h1>
+            <span class="bold">LUMINA</span>
+            <span class="highlight">ONE</span>
+          </h1>
+          <h2>Skab stemningen. Del øjeblikket.</h2>
+          <p href="seprodukt.html" class="btn">Bestil nu</p>
+        </div>
+      </section>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <!-- FEATURES SEKTION -->
+      <section class="features-grid">
+        <div class="feature-item">
+          <img src="images/connecticon.svg" alt="Connect ikon" />
+          <h3>Connect med flere enheder</h3>
+        </div>
+
+        <div class="feature-item">
+          <img src="images/batteryicon.svg" alt="Batteri ikon" />
+          <h3>Op til 18 timer batteritid</h3>
+        </div>
+
+        <div class="feature-item">
+          <img src="images/bticon.svg" alt="Bluetooth ikon" />
+          <h3>Bluetooth 5.3</h3>
+        </div>
+
+        <div class="feature-item">
+          <img src="images/dbicon.svg" alt="100dB ikon" />
+          <h3>Op til 100 dB</h3>
+        </div>
+      </section>
+
+      <!-- VIBES // FØRSTE GRID SECTION - BLAASTOL -->
+      <section class="vibes-section blaastol-section">
+        <div class="vibes-image">
+          <img src="images/blaastol.png" alt="Blastol" />
+        </div>
+        <div class="vibes-content">
+          <h1>Kompakt design</h1>
+          <p>Oplev kraftfuld lyd i et kompakt design</p>
+          <a href="seprodukt.html" class="read-more-btn">Se farveudvalg</a>
+        </div>
+      </section>
+
+      <!-- PINKPAABORD SECTION -->
+      <section class="vibes-section pinkpaabord-section">
+        <div class="vibes-content">
+          <h1>LUMINA ONE</h1>
+          <p>Tag musikken med dig overalt, med dit eget personlige design.</p>
+          <a href="seprodukt.html" class="read-more-btn">Se farveudvalg</a>
+        </div>
+        <div class="vibes-image">
+          <img
+            src="images/pinkspeakermarshall.png"
+            alt="Pink højtaler på bord"
+          />
+        </div>
+      </section>
+
+      <!-- FARVEUDVALG // ANDEN GRID SECTION -->
+      <!-- PRODUKT CONTAINER -->
+      <section class="product-container">
+        <!-- VENSTRE SIDE - BILLEDER -->
+        <div class="product-gallery">
+          <div class="gallery-main">
+            <img id="mainImage" src="images/pinkkøbnu.png" alt="LUMINA One" />
+          </div>
+        </div>
+
+        <!-- HØJRE SIDE - PRODUKTINFO -->
+        <div class="product-info">
+          <h1>LUMINA One</h1>
+          <p class="price">1995 DKK</p>
+
+          <hr />
+
+          <!-- FARVEUDVALG -->
+          <div class="color-selector">
+            <label id="colorLabel">Dusty rose</label>
+            <div class="color-options">
+              <button
+                class="color-btn active"
+                style="background-color: #d4a5a5"
+                title="Dusty rose"
+                data-color="dusty-rose"
+                data-image="images/pinkkøbnu.png"
+                data-color-name="Dusty rose"
+              ></button>
+              <button
+                class="color-btn"
+                style="background-color: #f5f5f5"
+                title="Moonlight white"
+                data-color="moonlight-white"
+                data-image="images/hvidkøbnu.png"
+                data-color-name="Moonlight white"
+              ></button>
+              <button
+                class="color-btn"
+                style="background-color: #8fb3a8"
+                title="Sage Green"
+                data-color="sage-green"
+                data-image="images/grønkøbnu.png"
+                data-color-name="Sage Green"
+              ></button>
+              <button
+                class="color-btn"
+                style="background-color: #c4a8d8"
+                title="Lavender Mist"
+                data-color="lavender-mist"
+                data-image="images/lillakøbnu.png"
+                data-color-name="Lavender Mist"
+              ></button>
+            </div>
+          </div>
+          <hr />
+
+          <!-- TILFØJ TIL KURV -->
+          <button class="add-to-cart-btn" id="addToCartBtn">Læg i kurv</button>
+        </div>
+      </section>
+      <section class="grid-container">
+        <div class="udvalg-section">
+          <img src="images/udvalg.gif" alt="udvalg af farver" />
+        </div>
+        <article class="udvalg-tekst">
+          <h3>Et udvalg der skiller sig ud</h3>
+          <p>
+            Vælg mellem et væld af farver og designs, der passer til din
+            personlige stil. Uanset om du foretrækker klassisk sort, livlig pink
+            eller noget helt tredje, har vi den perfekte højtaler til dig.
+          </p>
+        </article>
+      </section>
+
+      <!-- 360 // TREDJE GRID SECTION -->
+      <section class="hylde">
+        <div class="hylde-tekst">
+          <h3>360° musikoplevelse</h3>
+          <p>
+            Skab ægte surroundstemning: connect tre højttalere og få lyd, der
+            omslutter dig.
+          </p>
+          <button href="features.html" class="read-more-btn">Læs mere</button>
+        </div>
+
+        <div class="hylde-billede">
+          <img src="images/360grader.png" alt="360 graders lyd" />
+        </div>
+      </section>
+
+      <!-- kvinde //FJERDE GRID SECTION -->
+
+      <section class="grid-container">
+        <div class="kvindepaagulv">
+          <img
+            src="images/kvindepågulvmspeaker.png"
+            alt="Kvinde med højtaler på gulvet"
+          />
+        </div>
+        <article class="kvinde-tekst">
+          <h3>Designet til at imponere</h3>
+          <p>
+            Med sit moderne og stilfulde design er Lumina One ikke kun en
+            højtaler,
+          </p>
+        </article>
+      </section>
+
+      <!-- PENSELANIMATIONER // FEMTE GRID SECTION -->
+
+      <section class="grid-container">
+        <div class="penselserie">
+          <img src="images/penselserie.png" alt="hvid pensel animation" />
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-kol">
+        <h5>Kundeservice</h5>
+        <p><a href="kontakt.html">Kontakt os</a></p>
+        <p><a href="tel:004512345678">Telefon: +45 1234 5678</a></p>
+        <p><a href="faq.html">FAQ</a></p>
+        <p><a href="levering.html">Levering og forsendelse</a></p>
+        <p><a href="retur.html">Returneringer</a></p>
+      </div>
+
+      <div class="footer-kol">
+        <h5>Virksomheden</h5>
+        <p><a href="omlumina.html">Om Lumina Group</a></p>
+        <p><a href="presse.html">Presse</a></p>
+        <p><a href="job.html">Jobmuligheder</a></p>
+        <p><a href="kontakt.html">Kontakt os</a></p>
+      </div>
+
+      <div class="footer-kol">
+        <h5>Find os her</h5>
+        <div class="social-ikoner">
+          <a href="#"><img src="images/tiktok.png" alt="TikTok" /></a>
+          <a href="#"><img src="images/insta.png" alt="Instagram" /></a>
+          <a href="#"><img src="images/facebook.png" alt="Facebook" /></a>
+          <a href="#"><img src="images/youtube.png" alt="YouTube" /></a>
+        </div>
+      </div>
+
+      <div class="footer-logo">
+        <img src="images/logolumina.svg" alt="Lumina logo" />
+      </div>
+
+      <p class="copyright">&copy; Lumina, 2025</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

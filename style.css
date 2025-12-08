@@ -1,0 +1,918 @@
+/**
+ * file: css/style.css
+ * purpose: styling
+ **/
+
+/*----------------ROOTS, STYLES----------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--knekkethvid);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Import skrifttyper */
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Koulen&display=swap");
+
+/* Variable: farver */
+:root {
+  --hvid: #ffffff;
+  --knekkethvid: #fffcf7;
+  --granitgrøn: #adc3b9;
+  --babypink: #ffe2f9;
+  --støvetlilla: #d8cbe7;
+  --sand: #f0e3ca;
+  --earthbrown: #3a2a1f;
+  --sort: #000000;
+  --mørkegrå: #5a5a5a;
+}
+
+/* Typografi */
+h1 {
+  font-family: "Koulen", sans-serif;
+  font-size: 2.5rem;
+  color: var(--knekkethvid);
+  margin: 0;
+}
+
+h2 {
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 1.5rem;
+  font-weight: normal;
+  color: var(--hvid);
+  margin: 0;
+}
+
+h3 {
+  font-family: "Instrument Sans", sans-serif;
+  font-weight: 700;
+}
+
+h5 {
+  color: var(--hvid);
+  font-size: 2rem;
+  font-family: "Instrument Sans", sans-serif;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+p {
+  color: var(--sort);
+  font-family: "Comfortaa", sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin: 20px 0;
+}
+
+/*----------------ANNOUNCEMENT BAR----------------------*/
+.announcement-bar {
+  position: relative;
+  width: 100%;
+  background-color: var(--mørkegrå);
+  color: var(--hvid);
+  text-align: center;
+  padding: 8px 0;
+  font-family: "Comfortaa", sans-serif;
+  font-size: 0.85rem;
+  z-index: 1001;
+}
+
+.announcement-bar p {
+  margin: 0;
+  padding: 0;
+}
+
+.tencta {
+  color: var(--babypink);
+  text-decoration: none;
+}
+
+.tencta:hover {
+  text-decoration: underline;
+}
+
+/* ----------------TOGGLE MENU----------------------*/
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 60px; /* Under navigation */
+  left: 0;
+  width: 200px;
+  background-color: var(--mørkegrå);
+  flex-direction: column;
+  z-index: 999;
+  animation: slideDown 0.3s ease-out;
+}
+
+.mobile-menu.active {
+  display: flex;
+}
+
+.mobile-menu a {
+  padding: 15px 20px;
+  color: var(--hvid);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: "Comfortaa", sans-serif;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+}
+
+.mobile-menu a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*----------------NAVIGATION----------------------*/
+.topNav {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: var(--knekkethvid);
+  padding: 5px 20px;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topNav .nav-venstre,
+.topNav .nav-midten,
+.topNav .nav-højre {
+  display: flex;
+  align-items: center;
+}
+
+.menu-ikon {
+  width: 30px;
+  cursor: pointer;
+}
+
+.logo img {
+  height: 80px;
+}
+
+.cart img {
+  width: 30px;
+}
+
+/*----------------HERO SECTION----------------------*/
+header {
+  position: relative;
+  width: 100%;
+  margin: 0;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  margin: 10px;
+}
+
+.hero img {
+  width: 100%;
+  max-height: 1080px;
+  max-width: 1420px;
+  display: block;
+  border-radius: 5px;
+}
+
+.herotekst {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10;
+}
+
+.herotekst h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.herotekst h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+/* Bestil nu knap */
+.btn {
+  width: 100%;
+  padding: 10px 40px;
+  background-color: var(--hvid);
+  color: var(--sort);
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: transparent;
+  border: 2px solid var(--hvid);
+  color: var(--hvid);
+}
+
+/*----------------GRID CONTAINER (Farver)----------------------*/
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  max-width: 1400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: var(--knekkethvid);
+}
+
+.gridicon-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto 100px auto;
+  padding: 50px;
+}
+
+.pinkpaabord img {
+  max-width: 600px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/*----------------VIBES SECTIONS (Blaastol & Pinkpaabord)----------------------*/
+.vibes-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  max-width: 1400px;
+  margin: 80px auto;
+  padding: 40px;
+  align-items: center;
+}
+
+.vibes-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vibes-image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.vibes-content {
+  padding: 20px;
+}
+
+.vibes-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: var(--sort);
+  font-weight: 700;
+}
+
+.vibes-content p {
+  font-size: 1.1rem;
+  color: var(--mørkegrå);
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.vibes-content .read-more-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  width: auto;
+  background-color: var(--mørkegrå);
+  color: var(--hvid);
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+.vibes-content .read-more-btn:hover {
+  background-color: var(--knekkethvid);
+}
+
+/* Blaastol section - image on left */
+.blaastol-section {
+  background-color: var(--knekkethvid);
+}
+
+/* Pinkpaabord section - image on right */
+.pinkpaabord-section {
+  background-color: var(--hvid);
+}
+
+/*----------------GRID CONTAINER (Farver)----------------------*/
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  max-width: 1400px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.udvalg-section img {
+  width: 100%;
+  height: auto;
+}
+
+/* Features Grid Section */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  max-width: 1400px;
+  margin: 80px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.feature-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.feature-item h3 {
+  font-size: 1.2rem;
+  color: var(--sort);
+  font-family: "Instrument Sans", sans-serif;
+  font-weight: 500;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin: 40px auto;
+  }
+
+  .feature-item h3 {
+    font-size: 1rem;
+  }
+}
+
+/*----------------CART CONFIRMATION MODAL----------------------*/
+.cart-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 2000;
+  pointer-events: none;
+}
+
+.cart-modal.active {
+  display: block;
+  pointer-events: auto;
+}
+
+.modal-content {
+  background-color: var(--hvid);
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 350px;
+  width: 350px;
+  position: absolute;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  animation: dropDown 0.4s ease-out;
+  margin: 20px;
+  right: 0;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--sort);
+  opacity: 0.6;
+  transition: opacity 0.2s;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+}
+
+.modal-close:hover {
+  opacity: 1;
+}
+
+.modal-product {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.modal-product img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+  background-color: #f0f0f0;
+}
+
+.modal-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.modal-quantity {
+  color: var(--mørkegrå);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.modal-color {
+  font-size: 1rem;
+  color: var(--sort);
+  margin: 0;
+  font-weight: 500;
+}
+
+.modal-price {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--sort);
+  margin: 5px 0 0 0;
+}
+
+.modal-btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: var(--sort);
+  color: var(--hvid);
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  
+}
+
+.modal-btn:hover {
+  background-color: var(--mørkegrå);
+}
+
+@keyframes dropDown {
+  from {
+    transform: translateY(-400px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/*----------------360 GRADER SEKTION----------------------*/
+.hylde {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 6rem;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.hylde-tekst {
+  flex: 1;
+  max-width: 40%;
+  min-width: 300px;
+}
+
+.hylde-tekst h3 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.hylde-tekst p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: var(--sort);
+}
+
+.read-more-btn {
+  width: 100%;
+  padding: 15px;
+  background-color: var(--mørkegrå);
+  color: var(--hvid);
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 20px;
+}
+
+.read-more-btn:hover {
+  background-color: var(--knekkethvid);
+  transform: translateY(-3px);
+  color: var(--sort);
+  border: 2px solid var(--mørkegrå);
+}
+
+.hylde-billede {
+  flex: 1;
+  max-width: 60%;
+  min-width: 300px;
+}
+
+.hylde-billede img {
+  width: 100%;
+  height: auto;
+}
+
+/*----------------FOOTER----------------------*/
+.footer {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--sort);
+  padding: 40px;
+  color: var(--hvid);
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-kol {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-kol h5 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.footer-kol p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.footer-kol a {
+  color: var(--hvid);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-kol a:hover {
+  color: var(--babypink);
+}
+
+.social-ikoner {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.social-ikoner img {
+  width: 30px;
+  height: 30px;
+}
+
+.footer-logo {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.footer-logo img {
+  max-width: 200px;
+}
+
+.copyright {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+
+/*----------------RESPONSIVE----------------------*/
+@media (max-width: 768px) {
+  .herotekst h1 {
+    font-size: 2rem;
+  }
+
+  .herotekst h2 {
+    font-size: 1.2rem;
+  }
+
+  .handtekst {
+    position: static;
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  .hylde {
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+  .hylde-tekst,
+  .hylde-billede {
+    max-width: 100%;
+  }
+
+  .produkt-sektion {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/*---------CSS FOR SEPRODUKT PAGE --------------*/
+/*----------------PRODUKT PAGE----------------------*/
+.product-container {
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  background-color: var(--knekkethvid);
+}
+
+.product-gallery {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.gallery-main {
+  width: 100%;
+  height: 500px;
+  background-color: var(--hvid);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.gallery-main img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.gallery-thumbnails {
+  display: flex;
+  gap: 10px;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.thumbnail:hover {
+  border-color: var(--mørkegrå);
+}
+
+.thumbnail.active {
+  border-color: var(--mørkegrå);
+}
+
+.product-info {
+  flex: 1;
+}
+
+.product-info h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: var(--sort);
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--sort);
+  margin: 10px 0 20px 0;
+}
+
+.product-description a {
+  color: var(--sort);
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+.product-description a:hover {
+  color: var(--mørkegrå);
+}
+
+.color-selector {
+  margin: 20px 0;
+}
+
+.color-selector label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: var(--sort);
+}
+
+.color-options {
+  display: flex;
+  gap: 15px;
+}
+
+.color-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.color-btn:hover {
+  transform: scale(1.1);
+  border-color: var(--sort);
+}
+
+.add-to-cart-btn {
+  width: 100%;
+  padding: 15px;
+  background-color: var(--sort);
+  color: var(--hvid);
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 20px;
+}
+
+.add-to-cart-btn:hover {
+  background-color: var(--mørkegrå);
+}
+
+.product-details {
+  max-width: 1400px;
+  margin: 50px auto;
+  padding: 0 40px;
+  background-color: var(--knekkethvid);
+}
+
+.product-details h2 {
+  color: var(--sort);
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.product-details h3 {
+  color: var(--sort);
+  font-size: 1.3rem;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.product-details p {
+  color: var(--sort);
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+.product-details ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.product-details li {
+  color: var(--sort);
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .product-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .product-info h1 {
+    font-size: 2rem;
+  }
+
+  .gallery-main {
+    height: 300px;
+  }
+}
+
+.color-btn.active {
+  border-color: var(--sort);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.add-to-cart-btn {
+  width: 100%;
+  padding: 15px;
+  background-color: var(--mørkegrå);
+  color: var(--hvid);
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 20px;
+}
+
+.add-to-cart-btn:hover {
+  background-color: var(--hvid);
+  color: var(--sort);
+  border: 2px solid var(--mørkegrå);
+}
+
+.add-to-cart-btn:active {
+  transform: scale(0.98);
+}
+
+#cartItems {
+  font-weight: bold;
+  color: var(--sort);
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 20px;
+}
+
+/*----------------CART MODAL (DUPLIKAT - SLETTET)----------------------*/
+
+.modal-btn {
+  display: block;
+  margin-top: 20px;
+  padding: 10px 15px;
+  background: var(--sort);
+  color: var(--hvid);
+  text-align: center;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.modal-btn:hover {
+  background: var(--mørkegrå);
+}
