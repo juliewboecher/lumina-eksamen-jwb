@@ -646,7 +646,7 @@ header {
 .footer {
   display: flex;
   justify-content: space-between;
-  background-color: var(--sort);
+  background-color: var(--mørkegrå);
   padding: 40px;
   color: var(--hvid);
   flex-wrap: wrap;
