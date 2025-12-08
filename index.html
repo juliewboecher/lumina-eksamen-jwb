@@ -30,10 +30,10 @@
 
     <!-- ANNOUNCEMENT BAR -->
     <section class="announcement-bar">
-      <p>
+      <h3>
         Gå på opdagelse i vores nye kollektion LUMINA ONE
         <a href="farveudvalg.html"></a>
-      </p>
+      </h3>
     </section>
 
     <!-- NAVIGATION -->
@@ -48,9 +48,10 @@
 
       <!-- Mobile Menu -->
       <div class="mobile-menu" id="mobileMenu">
-        <a href="seprodukt.html">Se produkt</a>
-        <a href="farveudvalg.html">Farveudvalg</a>
-        <a href="features.html">Funktioner</a>
+        <a href="index.html">Forside</a>
+        <a href="#product-section">Se produkt</a>
+        <a href="#udvalg-section">Farveudvalg</a>
+        <a href="#funktioner">Funktioner</a>
         <a href="omlumina.html">Om LUMINA ONE</a>
         <a href="trustpilot.html">Hvad synes andre?</a>
       </div>
@@ -79,7 +80,7 @@
             <span class="highlight">ONE</span>
           </h1>
           <h2>Skab stemningen. Del øjeblikket.</h2>
-          <p href="seprodukt.html" class="btn">Bestil nu</p>
+          <a href="#product-section" class="btn">Bestil nu</a>
         </div>
       </section>
     </header>
@@ -109,36 +110,39 @@
         </div>
       </section>
 
-      <!-- VIBES // FØRSTE GRID SECTION - BLAASTOL -->
-      <section class="vibes-section blaastol-section">
-        <div class="vibes-image">
-          <img src="images/blaastol.png" alt="Blastol" />
+      <!-- VIBES SECTIONS - BLAASTOL & PINKPAABORD -->
+      <section class="vibes-section">
+        <div class="vibes-images">
+          <div class="vibes-image blaastol-section">
+            <img src="images/blaastol.png" alt="Blastol" />
+          </div>
+          <div class="vibes-image pinkpaabord-section">
+            <img
+              src="images/pinkspeakermarshall.png"
+              alt="Pink højtaler på bord"
+            />
+          </div>
         </div>
-        <div class="vibes-content">
-          <h1>Kompakt design</h1>
-          <p>Oplev kraftfuld lyd i et kompakt design</p>
-          <a href="seprodukt.html" class="read-more-btn">Se farveudvalg</a>
-        </div>
-      </section>
 
-      <!-- PINKPAABORD SECTION -->
-      <section class="vibes-section pinkpaabord-section">
-        <div class="vibes-content">
-          <h1>LUMINA ONE</h1>
-          <p>Tag musikken med dig overalt, med dit eget personlige design.</p>
-          <a href="seprodukt.html" class="read-more-btn">Se farveudvalg</a>
-        </div>
-        <div class="vibes-image">
-          <img
-            src="images/pinkspeakermarshall.png"
-            alt="Pink højtaler på bord"
-          />
+        <div class="vibes-contents">
+          <div class="vibes-content blaastol-section">
+            <h1>Kompakt design</h1>
+            <p>Oplev kraftfuld lyd i et kompakt design</p>
+            <a href="#product-section" class="read-more-btn"
+              >Udforsk kvaliteter</a
+            >
+          </div>
+          <div class="vibes-content pinkpaabord-section">
+            <h1>LUMINA ONE</h1>
+            <p>Tag musikken med dig overalt, med dit eget personlige design.</p>
+            <a href="#product-section" class="read-more-btn">Se farveudvalg</a>
+          </div>
         </div>
       </section>
 
       <!-- FARVEUDVALG // ANDEN GRID SECTION -->
       <!-- PRODUKT CONTAINER -->
-      <section class="product-container">
+      <section class="product-container" id="product-section">
         <!-- VENSTRE SIDE - BILLEDER -->
         <div class="product-gallery">
           <div class="gallery-main">
@@ -197,7 +201,7 @@
           <button class="add-to-cart-btn" id="addToCartBtn">Læg i kurv</button>
         </div>
       </section>
-      <section class="grid-container">
+      <section class="grid-container" id="udvalg-section">
         <div class="udvalg-section">
           <img src="images/udvalg.gif" alt="udvalg af farver" />
         </div>
@@ -213,13 +217,13 @@
 
       <!-- 360 // TREDJE GRID SECTION -->
       <section class="hylde">
-        <div class="hylde-tekst">
+        <div class="hylde-tekst" id="funktioner">
           <h3>360° musikoplevelse</h3>
           <p>
             Skab ægte surroundstemning: connect tre højttalere og få lyd, der
             omslutter dig.
           </p>
-          <button href="features.html" class="read-more-btn">Læs mere</button>
+          <a href="#product-section" class="read-more-btn">Køb nu</a>
         </div>
 
         <div class="hylde-billede">

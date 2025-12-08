@@ -2,8 +2,9 @@
  * file: css/style.css
  * purpose: styling
  **/
-
+/*==============================================================================*/
 /*----------------ROOTS, STYLES----------------------*/
+/*==============================================================================*/
 * {
   margin: 0;
   padding: 0;
@@ -15,9 +16,16 @@ body {
   margin: 0;
   padding: 0;
   background-color: var(--knekkethvid);
+  overflow-x: hidden;
 }
 
 html {
+  scroll-behavior: smooth;
+}
+
+/* Scroll offset for anchor links */
+[id] {
+  scroll-margin-top: 100px;
   scroll-behavior: smooth;
 }
 
@@ -57,7 +65,7 @@ h2 {
 
 h3 {
   font-family: "Instrument Sans", sans-serif;
-  font-weight: 700;
+  font-weight:lighter;
 }
 
 h5 {
@@ -70,13 +78,21 @@ h5 {
 
 p {
   color: var(--sort);
-  font-family: "Comfortaa", sans-serif;
+  font-family: "Instrument Sans", sans-serif;
   font-size: 1.2rem;
   line-height: 1.5;
   margin: 20px 0;
 }
 
+a {
+  color: var(--sort);
+  text-decoration: none;
+  font-family: "Comfortaa", sans-serif;
+}
+
+/*==============================================================================*/
 /*----------------ANNOUNCEMENT BAR----------------------*/
+/*==============================================================================*/
 .announcement-bar {
   position: relative;
   width: 100%;
@@ -103,7 +119,9 @@ p {
   text-decoration: underline;
 }
 
+/*==============================================================================*/
 /* ----------------TOGGLE MENU----------------------*/
+/*==============================================================================*/
 .mobile-menu {
   display: none;
   position: fixed;
@@ -151,8 +169,9 @@ p {
     transform: translateY(0);
   }
 }
-
+/*==============================================================================*/
 /*----------------NAVIGATION----------------------*/
+/*==============================================================================*/
 .topNav {
   position: sticky;
   top: 0;
@@ -184,8 +203,9 @@ p {
 .cart img {
   width: 30px;
 }
-
+/*==============================================================================*/
 /*----------------HERO SECTION----------------------*/
+/*==============================================================================*/
 header {
   position: relative;
   width: 100%;
@@ -228,7 +248,7 @@ header {
 /* Bestil nu knap */
 .btn {
   width: 100%;
-  padding: 10px 40px;
+  padding: 15px;
   background-color: var(--hvid);
   color: var(--sort);
   border: none;
@@ -236,17 +256,20 @@ header {
   font-size: 1.1rem;
   font-weight: bold;
   cursor: pointer;
+  transition: background-color 0.3s;
   margin-top: 20px;
   text-decoration: none;
+  display: inline-block;
+  text-align: center;
 }
 
 .btn:hover {
-  background-color: transparent;
-  border: 2px solid var(--hvid);
+  background-color: var(--sort);
   color: var(--hvid);
 }
-
+/*==============================================================================*/
 /*----------------GRID CONTAINER (Farver)----------------------*/
+/*==============================================================================*/
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -272,16 +295,29 @@ header {
   display: block;
   margin: 0 auto;
 }
-
+/*==============================================================================*/
 /*----------------VIBES SECTIONS (Blaastol & Pinkpaabord)----------------------*/
+/*==============================================================================*/
 .vibes-section {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 40px;
   max-width: 1400px;
   margin: 80px auto;
   padding: 40px;
+}
+
+.vibes-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
   align-items: center;
+}
+
+.vibes-contents {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
 }
 
 .vibes-image {
@@ -314,23 +350,6 @@ header {
   line-height: 1.6;
 }
 
-.vibes-content .read-more-btn {
-  display: inline-block;
-  padding: 12px 30px;
-  width: auto;
-  background-color: var(--mørkegrå);
-  color: var(--hvid);
-  text-decoration: none;
-  border-radius: 25px;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-}
-
-.vibes-content .read-more-btn:hover {
-  background-color: var(--knekkethvid);
-}
-
 /* Blaastol section - image on left */
 .blaastol-section {
   background-color: var(--knekkethvid);
@@ -338,10 +357,11 @@ header {
 
 /* Pinkpaabord section - image on right */
 .pinkpaabord-section {
-  background-color: var(--hvid);
+  background-color: var(--knekkethvid);
 }
-
+/*==============================================================================*/
 /*----------------GRID CONTAINER (Farver)----------------------*/
+/*==============================================================================*/
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -399,8 +419,11 @@ header {
     font-size: 1rem;
   }
 }
-
+/*==============================================================================*/
 /*----------------CART CONFIRMATION MODAL----------------------*/
+/*==============================================================================*/
+
+/* disse styles er til produktmodalen */
 .cart-modal {
   display: none;
   position: fixed;
@@ -409,12 +432,12 @@ header {
   z-index: 2000;
   pointer-events: none;
 }
-
+/* active state for cart modal */
 .cart-modal.active {
   display: block;
   pointer-events: auto;
 }
-
+/* modal indhold */
 .modal-content {
   background-color: var(--hvid);
   border-radius: 8px;
@@ -427,7 +450,7 @@ header {
   margin: 20px;
   right: 0;
 }
-
+/* close knap */
 .modal-close {
   position: absolute;
   top: 10px;
@@ -443,14 +466,13 @@ header {
   width: 30px;
   height: 30px;
 }
-
 .modal-close:hover {
   opacity: 1;
 }
 
 .modal-product {
-  display: flex;
-  flex-direction: column;
+  display: flex; /* Flex layout */
+  flex-direction: column; /* Stacked layout */
   gap: 15px;
   margin-bottom: 15px;
 }
@@ -492,21 +514,21 @@ header {
 .modal-btn {
   display: block;
   width: 100%;
-  padding: 12px;
-  background-color: var(--sort);
+  padding: 15px;
+  background-color: var(--mørkegrå);
   color: var(--hvid);
-  border: none;
-  border-radius: 6px;
-  font-size: 0.95rem;
+  border-color: #000000;
+  border-radius: 30px;
+  font-size: 1.1rem;
   font-weight: bold;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
-  
+  transition: background-color 0.3s;
 }
 
 .modal-btn:hover {
-  background-color: var(--mørkegrå);
+  background-color: var(--sort);
 }
 
 @keyframes dropDown {
@@ -519,15 +541,18 @@ header {
     opacity: 1;
   }
 }
-
+/*==============================================================================*/
 /*----------------360 GRADER SEKTION----------------------*/
+/*==============================================================================*/
 .hylde {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 4rem 6rem;
+  padding: 4rem 2rem;
   gap: 4rem;
   flex-wrap: wrap;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .hylde-tekst {
@@ -549,25 +574,23 @@ header {
   color: var(--sort);
 }
 
+/* dette tag er brugt til flere cta-knapper */
 .read-more-btn {
-  width: 100%;
+  /* width: 100%; */ /* Fjernet for at undgå fuld bredde og få hug-funktion istf.*/
   padding: 15px;
-  background-color: var(--mørkegrå);
-  color: var(--hvid);
-  border: none;
+  background-color: transparent;
+  color: var(--sort);
+  border-style: solid;
   border-radius: 30px;
+  border-color: #000000;
   font-size: 1.1rem;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s;
   margin-top: 20px;
-}
-
-.read-more-btn:hover {
-  background-color: var(--knekkethvid);
-  transform: translateY(-3px);
-  color: var(--sort);
-  border: 2px solid var(--mørkegrå);
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
 }
 
 .hylde-billede {
@@ -580,8 +603,9 @@ header {
   width: 100%;
   height: auto;
 }
-
+/*==============================================================================*/
 /*----------------FOOTER----------------------*/
+/*==============================================================================*/
 .footer {
   display: flex;
   justify-content: space-between;
@@ -644,7 +668,7 @@ header {
   margin-top: 20px;
   font-size: 0.9rem;
 }
-
+/*==============================================================================*/
 /*----------------RESPONSIVE----------------------*/
 @media (max-width: 768px) {
   .herotekst h1 {
@@ -676,9 +700,10 @@ header {
     align-items: center;
   }
 }
-
-/*---------CSS FOR SEPRODUKT PAGE --------------*/
-/*----------------PRODUKT PAGE----------------------*/
+/*==============================================================================*/
+/*==============================================================================*/
+/*---------CSS FOR SEPRODUKT --------------*/
+/*==============================================================================*/
 .product-container {
   display: flex;
   gap: 40px;
@@ -792,12 +817,12 @@ header {
 }
 
 .add-to-cart-btn {
-  width: 100%;
+  /* width: 100%; */
   padding: 15px;
-  background-color: var(--sort);
+  background-color: var(--mørkegrå);
   color: var(--hvid);
   border: none;
-  border-radius: 8px;
+  border-radius: 30px;
   font-size: 1.1rem;
   font-weight: bold;
   cursor: pointer;
@@ -806,7 +831,7 @@ header {
 }
 
 .add-to-cart-btn:hover {
-  background-color: var(--mørkegrå);
+  background-color: var(--sort);
 }
 
 .product-details {
@@ -846,7 +871,7 @@ header {
   padding: 8px 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
-
+/*==============================================================================*/
 /* Responsive */
 @media (max-width: 768px) {
   .product-container {
@@ -862,7 +887,7 @@ header {
     height: 300px;
   }
 }
-
+/*==============================================================================*/
 .color-btn.active {
   border-color: var(--sort);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -871,7 +896,7 @@ header {
 .add-to-cart-btn {
   width: 100%;
   padding: 15px;
-  background-color: var(--mørkegrå);
+  background-color: var(--sort);
   color: var(--hvid);
   border: none;
   border-radius: 30px;
@@ -900,19 +925,3 @@ header {
   padding: 20px;
 }
 
-/*----------------CART MODAL (DUPLIKAT - SLETTET)----------------------*/
-
-.modal-btn {
-  display: block;
-  margin-top: 20px;
-  padding: 10px 15px;
-  background: var(--sort);
-  color: var(--hvid);
-  text-align: center;
-  border-radius: 5px;
-  text-decoration: none;
-}
-
-.modal-btn:hover {
-  background: var(--mørkegrå);
-}
