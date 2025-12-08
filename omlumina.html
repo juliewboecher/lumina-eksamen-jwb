@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>LuminaAudio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- CART CONFIRMATION MODAL -->
+    <div id="cartModal" class="cart-modal">
+      <div class="modal-content">
+        <button class="modal-close" onclick="closeCartModal()">×</button>
+
+        <div class="modal-product">
+          <img id="modalImage" src="" alt="Produkt" />
+
+          <div class="modal-info">
+            <p class="modal-quantity" id="modalQuantity">1 stk.</p>
+            <p class="modal-color" id="modalColor">Farve</p>
+            <p class="modal-price" id="modalPrice">Pris</p>
+          </div>
+        </div>
+
+        <a href="kurv.html" class="modal-btn">Se kurv</a>
+      </div>
+    </div>
+
+    <!-- ANNOUNCEMENT BAR -->
+    <section class="announcement-bar">
+      <h3>
+        Gå på opdagelse i vores nye kollektion LUMINA ONE
+        <a href="#product-section">Se kollektionen</a>
+      </h3>
+    </section>
+
+    <!-- NAVIGATION -->
+
+    <!-- Toggle dropdown Menu -->
+    <nav class="topNav">
+      <div class="nav-venstre">
+        <button class="menu-toggle" id="menuToggle">
+          <img class="menu-ikon" src="images/burgermenu.svg" alt="menu ikon" />
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Forside</a>
+        <a href="seprodukt.html">Se produkt</a>
+        <a href="#udvalg-section">Farveudvalg</a>
+        <a href="features.html">Funktioner</a>
+        <a href="omlumina.html">Om LUMINA ONE</a>
+        <a href="trustpilot.html">Hvad synes andre?</a>
+      </div>
+
+      <div class="nav-midten">
+        <a href="index.html" class="logo">
+          <img src="images/nytlogosort.svg" alt="Lumina Logo" />
+        </a>
+      </div>
+
+      <div class="nav-højre">
+        <a href="kurv.html" class="cart">
+          <img src="images/kurv.svg" alt="kurv ikon" />
+        </a>
+      </div>
+    </nav>
+
+
+    <header>
+      <h1>Funktioner</h1>
+    </header>
+
+    <main>
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-kol">
+        <h1>FIND OS HER</h1>
+        <p><a>lumina@audio.com</a></p>
+      </div>
+
+      <div class="footer-kol">
+        <h1>OM LUMINA</h1>
+        <p><a href="#product-section">Farveudvalg</a></p>
+        <p><a href="#funktioner">Funktioner</a></p>
+      </div>
+
+      <div class="footer-kol">
+        <h1>MERE INFO</h1>
+        <div class="footer-kol">
+          <p><a href="#trustpilot">Hvad synes andre?</a></p>
+          <p><a href="#">Om LUMINA ONE</a></p>
+        </div>
+      </div>
+
+      <div class="footer-logo">
+        <img src="images/hvidlogo.svg" alt="Lumina Logo" />
+      </div>
+
+      <h3 class="copyright">&copy; Lumina, 2025</h3>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
