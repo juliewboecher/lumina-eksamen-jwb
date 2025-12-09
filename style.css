@@ -130,9 +130,9 @@ a {
   width: 200px;
   background-color: var(--knekkethvid);
   flex-direction: column;
-  z-index: 999;
+  z-index: 1001;
   animation: slideDown 0.3s ease-out;
-  border-radius: 20px;
+  border-radius: 0px;
   padding: 20px 0;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
