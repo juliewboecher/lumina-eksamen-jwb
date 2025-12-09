@@ -605,6 +605,8 @@ header {
 /*==============================================================================*/
 /*----------------360 GRADER SEKTION----------------------*/
 /*==============================================================================*/
+
+
 .hylde {
   display: flex;
   justify-content: space-between;
@@ -617,12 +619,14 @@ header {
 }
 
 .hylde-tekst {
-  flex: 1;
-  max-width: 40%;
-  min-width: 300px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .hylde-tekst h3 {
+  color: var(--sort);
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
