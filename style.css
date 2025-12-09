@@ -1102,3 +1102,7 @@ header {
   color: var(--sort);
   text-align: center;
 }
+
+.trustpilot-content {
+  color: var(--sort);
+}
