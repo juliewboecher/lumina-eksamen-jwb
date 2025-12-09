@@ -39,7 +39,7 @@ html {
   --hvid: #ffffff;
   --knekkethvid: #fffcf7;
   --sort: #000000;
-  --mørkegrå: #5a5a5a;
+  --mørkegrå: #434343;
 }
 
 /* Typografi */
@@ -112,6 +112,11 @@ a {
   padding: 0;
 }
 
+.announcement-bar a {
+  color: var(--hvid);
+  font-weight: semi-bold;
+  text-decoration: underline;
+}
 
 
 /*==============================================================================*/
@@ -642,22 +647,24 @@ header {
 
 /* dette tag er brugt til flere cta-knapper */
 .read-more-btn {
-  width: 100%;
-  padding: 15px;
+  
+  width: 300px;
+  padding: 10px;
   background-color: transparent;
   color: var(--sort);
-  border-style: solid;
+  border: solid;  border-color: #000000;
   border-radius: 30px;
-  border-color: #000000;
   font-size: 1.1rem;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s;
-  margin-top: 20px;
-  text-decoration: none;
+  margin: 20px 0 0 0;
   display: block;
   text-align: center;
-  box-sizing: border-box;
+}
+.read-more-btn:hover {
+  background-color: var(--sort);
+  color: var(--hvid);
 }
 
 .hylde-billede {
@@ -975,9 +982,8 @@ header {
 }
 
 .add-to-cart-btn:hover {
-  background-color: var(--hvid);
-  color: var(--sort);
-  border: 2px solid var(--mørkegrå);
+  background-color: var(--mørkegrå);
+  color: var(--hvid);
 }
 
 .add-to-cart-btn:active {
@@ -1088,13 +1094,12 @@ header {
   }
 }
 
-
 /*==============================================================================*/
 /*----------------Trustpilot Anmeldelser----------------------*/
 /*==============================================================================*/
 
 .trustpilot-reviews {
-  max-width: 1400px;
+  max-width: 1300px;
   margin: 50px auto;
   padding: 20px;
   background-color: var(--knekkethvid);
@@ -1109,4 +1114,37 @@ header {
 
 .trustpilot-content {
   color: var(--sort);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+
+}
+
+.trustpilot-btn {
+  width: 300px;
+  padding: 10px;
+  background-color: transparent;
+  color: var(--sort);
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin: 20px auto 0;
+  display: block;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.trustpilot-btn:hover {
+  color: var(--sort);
+  font-weight: bolder;
+}
+
+.trustpilot-tekst {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 20px auto;
 }
