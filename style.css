@@ -658,7 +658,7 @@ header {
 
 .hylde-billede {
   flex: 1;
-  max-width: 60%;
+  max-width: 100%;
   min-width: 300px;
 }
 
