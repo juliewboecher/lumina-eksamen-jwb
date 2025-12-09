@@ -51,8 +51,8 @@ function rotateHeroImage() {
   }
 }
 
-// Skift billede hver 5 sekund (5000 ms)
-setInterval(rotateHeroImage, 5000);
+// Skift billede hver 7 sekund (7000 ms)
+setInterval(rotateHeroImage, 7000);
 
 // Farveudvalg på produktside =================================================
 // Denne kode håndterer skiftet af produktbillede baseret på den valgte farve.
